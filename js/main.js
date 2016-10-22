@@ -40,15 +40,15 @@
 // }
 
 //3.鼠标移入移出改变样式，用伪类:hover当然可以轻松实现，这里熟悉一下onmouseover和onmouseout事件
-window.onload = function() {
-	var oDiv = document.getElementById('div1');
-	oDiv.onmouseover = function () {
-		oDiv.className = 'hover';
-	}
-	oDiv.onmouseout = function () {
-		oDiv.className = '';
-	}
-}
+// window.onload = function() {
+// 	var oDiv = document.getElementById('div1');
+// 	oDiv.onmouseover = function () {
+// 		oDiv.className = 'hover';
+// 	}
+// 	oDiv.onmouseout = function () {
+// 		oDiv.className = '';
+// 	}
+// }
 
 //4.
 
