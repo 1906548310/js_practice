@@ -1,0 +1,32 @@
+/*控制DIV属性*/
+/*#outer{width:500px;margin:0 auto;padding:0;text-align:center;}*/
+/*#div1{width:100px;height:100px;background:black;margin:10px auto;display:block;}*/
+/*控制DIV属性*/
+
+
+/*网页换肤*/
+/*body,ul,li{margin:0;padding:0;}
+html,body{height:100%;}
+body{font:12px/1.5 Tahoma;}
+li{list-style-type:none;}
+a:link,a:visited{text-decoration:none;}
+a:hover{text-decoration:underline;}
+#outer{width:500px;margin:0 auto;overflow:hidden;zoom:1;}
+#skin,#nav{overflow:hidden;zoom:1;}
+#skin{margin:10px 0;}
+#skin li{float:left;width:20px;height:20px;cursor:pointer;overflow:hidden;margin-right:10px;text-indent:-9999px;border-width:4px;border-style:solid;}
+#skin li.current{background:#fff!important;}
+#red{border-color:red;background:red;}
+#green{border-color:green;background:green;}
+#black{border-color:black;background:black;}
+#nav{border:1px solid #fff;}
+#nav li{float:left;width:82px;line-height:25px;text-align:center;border-right:1px solid #fff;}
+#nav li.last{width:83px;border-right-width:0;}
+#nav li a{color:#fff;}*/
+/*网页换肤*/
+
+/*鼠标移入移出改变样式*/
+body{color:#fff;font:12px/1.5 Tahoma;}
+#div1{width:150px;height:150px;margin:0 auto;padding:10px;background:black;border:10px solid #000;cursor:crosshair;}
+#div1.hover{color:red;background:#f0f0f0;border:10px solid red;}
+/*鼠标移入移出改变样式*/
