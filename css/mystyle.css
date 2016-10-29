@@ -26,7 +26,30 @@ a:hover{text-decoration:underline;}
 /*网页换肤*/
 
 /*鼠标移入移出改变样式*/
-body{color:#fff;font:12px/1.5 Tahoma;}
+/*body{color:#fff;font:12px/1.5 Tahoma;}
 #div1{width:150px;height:150px;margin:0 auto;padding:10px;background:black;border:10px solid #000;cursor:crosshair;}
-#div1.hover{color:red;background:#f0f0f0;border:10px solid red;}
+#div1.hover{color:red;background:#f0f0f0;border:10px solid red;}*/
 /*鼠标移入移出改变样式*/
+
+/*复选框实现全选/全不选/反选，中低难度*/
+/*body,dl,dt,dd,p{margin:0;padding:0;}
+body{font-family:Tahoma;font-size:12px;}
+label,input,a{vertical-align:middle;}
+label{padding:0 10px 0 5px;}
+a{color:#09f;text-decoration:none;}
+a:hover{color:red;}
+dl{width:120px;margin:10px auto;padding:10px 5px;border:1px solid #666;border-radius:5px;background:#fafafa;}
+dt{padding-bottom:10px;border-bottom:1px solid #666;}
+dt label{font-weight:700;}
+p{margin-top:10px;}*/
+/*复选框实现全选/全不选/反选*/
+
+/*网页计算器，中高难度*/
+/*网页计算器，中高难度*/
+
+/*简易网页时钟*/
+/*body,div{margin:0;padding:0;}
+body{color:#fff;font:16px/1.5 \5fae\8f6f\96c5\9ed1;}
+#clock{width:300px;text-align:center;background:#1a1a1a;margin:10px auto;padding:20px 0;}
+span{color:#000;width:80px;line-height:2;background:#fbfbfb;border:2px solid #b4b4b4;margin:0 10px;padding:0 10px;}
+*//*简易网页时钟*/

@@ -17,7 +17,6 @@
 // 			changeStyle(obj, oAtt[this.index], oVal[this.index]);
 // 			// console.log(i);
 // 			// i == 4 && (obj.style.cssText = '');
-
 // 		}
 // 	}
 // }
@@ -39,7 +38,7 @@
 // 	}
 // }
 
-//3.鼠标移入移出改变样式，用伪类:hover当然可以轻松实现，这里熟悉一下onmouseover和onmouseout事件
+// 3.鼠标移入移出改变样式，用伪类:hover当然可以轻松实现，这里熟悉一下onmouseover和onmouseout事件
 // window.onload = function() {
 // 	var oDiv = document.getElementById('div1');
 // 	oDiv.onmouseover = function () {
@@ -50,8 +49,59 @@
 // 	}
 // }
 
-//4.
+//4.复选框实现全选/全不选/反选
+// window.onload = function() {
+// 	var mya = document.getElementsByTagName('a')[0];
+// 	var myInput = document.getElementsByTagName('input');
+// 	var myLabel = document.getElementsByTagName('label')[0];
+// 	function isCheckAll() {
+// 		for(var i=1, n=0; i<myInput.length; i++) {
+// 			myInput[i].checked && n++;
+// 		}
+// 		myInput[0].checked = (n == myInput.length - 1);
+// 		myLabel.innerHTML = (myInput[0].checked?"全不选":"全选")
+// 	};
+// 	// 全选/全不选
+// 	myInput[0].onclick = function() {
+// 		for(var i=1;i<myInput.length;i++) {
+// 			myInput[i].checked = this.checked;
+// 		}
+// 		isCheckAll();
+// 	};
+// 	//反选
+// 	mya.onclick = function() {
+// 		for(var i=1;i<myInput.length;i++) {
+// 			myInput[i].checked = !myInput[i].checked;
+// 		}
+// 		isCheckAll();
+// 	};
+// 	//根据复选个数更新全选框状态
+// 	for(var i=1;i<myInput.length;i++) {
+// 		myInput[i].onclick = function() {
+// 			isCheckAll();
+// 		};
+// 	}
+// }
 
+// 5.简易网页时钟
+// window.onload = function() {
+// 	var myClock = document.getElementById('clock');
+// 	var iSpan = myClock.getElementsByTagName('span');
+// 	setInterval(getTime,1000);
+// 	// getTimes(); 加这句话有什么好处？
+// 	function getTime() {
+// 		var timer = new Date();
+// 		timeNow = [timer.getHours(),timer.getMinutes(),timer.getSeconds()];
+// 		for (var i in timeNow) {
+// 			iSpan[i].innerHTML = format(timeNow[i]);
+// 		}
+// 	}
+// 	function format(a) {
+// 		return a.toString().replace(/^(\d)$/, "0$1");	
+// 	}
+// }
+
+// 6.轮播图
 
 
 
