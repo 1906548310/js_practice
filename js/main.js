@@ -88,7 +88,7 @@
 // 	var myClock = document.getElementById('clock');
 // 	var iSpan = myClock.getElementsByTagName('span');
 // 	setInterval(getTime,1000);
-// 	// getTimes(); 加这句话有什么好处？
+// 	// getTimes(); 加这句话是为了避免1s的误差
 // 	function getTime() {
 // 		var timer = new Date();
 // 		timeNow = [timer.getHours(),timer.getMinutes(),timer.getSeconds()];
