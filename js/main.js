@@ -101,7 +101,18 @@
 // 	}
 // }
 
-// 6.轮播图
+// 6.鼠标移动改变图片路径
+window.onload = function () {
+	var Img = document.getElementById('box').getElementsByTagName('img');
+	var oDiv = document.getElementsByTagName('div')[0];
+	for( var i = 0; i<Img.length; i++) {
+		Img[i].onmouseover = function() {
+			Img[0].src = this.src.replace(/small/,"big");
+			oDiv.style.display = 'block';
+			Img[0].complete ? oDiv.style.display = 'none':(Img[0].onload = function () {oDiv.style.display = 'none';})
+		}
+	}
+};
 
 
 
