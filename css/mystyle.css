@@ -81,3 +81,8 @@ body{background:#000;text-align:center;font:12px/20px Arial;}
 #tmp{width:100px;height:100px;background:red;position:absolute;}*/
 /*轮播图*/
 
+/*数组操作*/
+.array_example {display: inline-block;padding:10px 15px;background-color: #999;color: #fff;}
+input {background-color: #000;border-radius: 5px;margin-top:20px;padding: 5px 10px;border:0;color:#fff;}
+/*数组操作*/
+

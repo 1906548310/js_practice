@@ -111,6 +111,20 @@
 </div> -->
 <!-- 轮播图 -->
 
+<!-- 数组操作 -->
+<div id="array_box">
+    <div class="array_example">圣女果,芒果,樱桃,榴莲,苹果,樱桃,牛油果,荔枝</div>
+    <br>
+    <input type="button" name="" value="还原">
+    <input type="button" name="" value="删除第一项">
+    <input type="button" name="" value="删除最后一项">
+    <input type="button" name="" value="删除前三项">
+    <input type="button" name="" value="删除二至三项">
+    <input type="button" name="" value="在第二项后插入‘香蕉’">
+    <input type="button" name="" value="替换第二、三项">
+</div>
+<!-- 数组操作 -->
+
 
 
 
@@ -119,7 +133,23 @@
 <!-- <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 <!-- <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script> -->
 <script type="text/javascript">
-
+window.onload = function() {
+    var myArray = document.getElementById('array_box');
+    var thisArray = myArray.getElementsByClassName('array_example')[0];
+    var myInput = myArray.getElementsByTagName('input');
+    var str = thisArray.innerHTML;
+    var aTmp = str.split(',');
+    var originArray = ['圣女果','芒果','樱桃','榴莲','苹果','樱桃','牛油果','荔枝'];
+    for(var i in str) {aTmp.push(str[i]);}
+    myInput[0].onclick = function() {
+        thisArray.innerHTML = originArray.join();
+    }
+    myInput[1].onclick = function () {
+        aTmp.shift();
+        thisArray.innerHTML = aTmp.join();
+    }
+    console.log(str);
+}
 </script>
 
 </body>
