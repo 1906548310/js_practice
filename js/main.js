@@ -1,9 +1,9 @@
-// //1.修改div属性，批量添加事件监听
-// // 定义修改样式的函数（难道这就是传说中的回调函数？）
+//1.修改div属性，通过遍历批量添加事件监听
+// 定义修改样式的函数（难道这就是传说中的回调函数？）
 // function changeStyle(obj, attr, value) {
 // 	obj.style[attr] = value;
 // }
-// // 获取元素，对样式进行修改
+// 获取元素，对样式进行修改
 // window.onload = function() {
 // 	var obj = document.getElementById('div1');
 // 	var inp = document.getElementsByTagName('input');
@@ -49,7 +49,7 @@
 // 	}
 // }
 
-//4.复选框实现全选/全不选/反选
+// 4.复选框实现全选/全不选/反选
 // window.onload = function() {
 // 	var mya = document.getElementsByTagName('a')[0];
 // 	var myInput = document.getElementsByTagName('input');
@@ -102,19 +102,19 @@
 // }
 
 // 6.鼠标移动改变图片路径
-window.onload = function () {
-	var Img = document.getElementById('box').getElementsByTagName('img');
-	var oDiv = document.getElementsByTagName('div')[0];
-	for( var i = 0; i<Img.length; i++) {
-		Img[i].onmouseover = function() {
-			Img[0].src = this.src.replace(/small/,"big");
-			oDiv.style.display = 'block';
-			Img[0].complete ? oDiv.style.display = 'none':(Img[0].onload = function () {oDiv.style.display = 'none';})
-		}
-	}
-};
+// window.onload = function () {
+// 	var Img = document.getElementById('box').getElementsByTagName('img');
+// 	var oDiv = document.getElementsByTagName('div')[0];
+// 	for( var i = 0; i<Img.length; i++) {
+// 		Img[i].onmouseover = function() {
+// 			Img[0].src = this.src.replace(/small/,"big");
+// 			oDiv.style.display = 'block';
+// 			Img[0].complete ? oDiv.style.display = 'none':(Img[0].onload = function () {oDiv.style.display = 'none';})
+// 		}
+// 	}
+// };
 
-// 6.轮播图
+// 7.轮播图
 // window.onload = function() {
 // 	var oBox = document.getElementById('box');
 // 	var aUI = document.getElementsByTagName('ul');
@@ -176,7 +176,7 @@ window.onload = function () {
 // 	}
 // }
 
-7.
+// 8.
 
 
 
