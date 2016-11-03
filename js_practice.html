@@ -112,7 +112,7 @@
 <!-- 轮播图 -->
 
 <!-- 数组操作 -->
-<div id="array_box">
+<!-- <div id="array_box">
     <div class="array_example">圣女果,芒果,樱桃,榴莲,苹果,樱桃,牛油果,荔枝</div>
     <br>
     <input type="button" name="" value="还原">
@@ -123,54 +123,99 @@
     <input type="button" name="" value="在第二项后插入‘香蕉’和'橘子'">
     <input type="button" name="" value="替换第二、三项">
 </div>
-<!-- 数组操作 -->
+ --><!-- 数组操作 -->
 
+<!-- 事件绑定 -->
+<!-- <input type="button" name="" value="毫无用处的按钮">
+<input type="button" name="" value="绑定Click事件">
+<input type="button" name="" value="解除事件绑定"> -->
+<!-- 事件绑定 -->
 
+<!-- 星级评分系统 -->
+<!-- <div id="star">
+    <span>点击星星就能打分</span>
+    <ul>
+        <li><a href="javascript:;">1</a></li>
+        <li><a href="javascript:;">2</a></li>
+        <li><a href="javascript:;">3</a></li>
+        <li><a href="javascript:;">4</a></li>
+        <li><a href="javascript:;">5</a></li>
+    </ul>
+    <span></span>
+    <p></p>
+</div> -->
+<!-- 星级评分系统 -->
 
+<!-- 显示点击位置的坐标和按下键盘的keyCode -->
+<!-- <h1>这里将显示您按下键的 keyCode</h1> -->
+<!-- 显示点击位置的坐标和按下键盘的keyCode -->
+
+<!-- 跟随鼠标移动 -->
+<div id="box">
+    <ul>
+        <li><img src="http://www.fgm.cc/learn/lesson5/img/shirt_1.jpg" /></li>
+        <li><img src="http://www.fgm.cc/learn/lesson5/img/shirt_2.jpg" /></li>
+        <li><img src="http://www.fgm.cc/learn/lesson5/img/shirt_3.jpg" /></li>
+        <li><img src="http://www.fgm.cc/learn/lesson5/img/shirt_4.jpg" /></li>
+    </ul>
+</div>
+<div id="big"><div></div></div>
+<!-- 跟随鼠标移动 -->
 
 
 <!-- <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script> -->
 <!-- <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 <!-- <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script> -->
 <script type="text/javascript">
-window.onload = function() {
-    var myArray = document.getElementById('array_box');
-    var thisArray = myArray.getElementsByClassName('array_example')[0];
-    var myInput = myArray.getElementsByTagName('input');
-    var str = thisArray.innerHTML;
-    var aTmp = str.split(',');
-    var originArray = ['圣女果','芒果','樱桃','榴莲','苹果','樱桃','牛油果','荔枝'];
-    // for(var i in str) {aTmp.push(str[i]);}
-    myInput[0].onclick = function() {
-        thisArray.innerHTML = originArray.join();
+window.onload = function ()
+{
+    var aLi = document.getElementsByTagName("li");
+    var oBig = document.getElementById("big");
+    var oLoading = oBig.getElementsByTagName("div")[0];
+    var i = 0;
+    
+    for(var i = 0; i < aLi.length; i++) {
+        aLi[i].index = i;
+        //鼠标滑过：显示大图、定位大图、改变自身样式
+        aLi[i].onmouseover = function () {
+            /* body... */
+        }
+        //鼠标移动：定位大图
+        aLi[i].onmousemove = function () {
+            /* body... */
+        }
+        //鼠标移出：关闭大图、删除对应子元素、去除自身样式
+        aLi[i].onmouseout = function() {
+            
+        }
     }
-    myInput[1].onclick = function () {
-        aTmp.shift();
-        thisArray.innerHTML = aTmp.join();
-    }
-    myInput[2].onclick = function () {
-        aTmp.pop();
-        thisArray.innerHTML = aTmp.join();
-    }
-    myInput[3].onclick = function () {
-        aTmp.splice(0,3);
-        thisArray.innerHTML = aTmp.join();
-    }
-    myInput[4].onclick = function () {
-        aTmp.splice(1,2);
-        thisArray.innerHTML = aTmp.join();
-    }
-    myInput[5].onclick = function () {
-        aTmp.splice(1,0,'香蕉','橘子');
-        thisArray.innerHTML = aTmp.join();
-    }
-    myInput[6].onclick = function () {
-        aTmp.splice(1,2,'草莓');
-        thisArray.innerHTML = aTmp.join();
-    }
-}
+};
+
 </script>
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

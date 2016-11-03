@@ -152,31 +152,165 @@
 // 	autoPlay();  //应用
 
 // 	// 图片切换，淡入淡出效果
-// 	function show(a) {
-// 		index = a;
-// 		var alpha = 0;
-// 		for(var i = 0; i<aNum.length; i++) {
-// 			aNum[i].className = '';
-// 		}
-// 		aNum[index].className = 'current';
-// 		clearInterval(timer);
+	// function show(a) {
+	// 	index = a;
+	// 	var alpha = 0;
+	// 	for(var i = 0; i<aNum.length; i++) {
+	// 		aNum[i].className = '';
+	// 	}
+	// 	aNum[index].className = 'current';
+	// 	clearInterval(timer);
 
-// 		for(var i = 0; i<aImg.length; i++) {
-// 			aImg[i].style.opacity = 0;
-// 			aImg[i].style.filter = 'alpha(opacity = 0)';
-// 		}
+	// 	for(var i = 0; i<aImg.length; i++) {
+	// 		aImg[i].style.opacity = 0;
+	// 		aImg[i].style.filter = 'alpha(opacity = 0)';
+	// 	}
 
-// 		timer = setInterval(function() {
-// 			alpha += 2;
-// 			alpha > 100 && (alpha = 100);
-// 			aImg[index].style.opacity = alpha/100;
-// 			aImg[index].style.filter = 'alpha(opacity = "+alpha+")';
-// 			alpha == 100 && clearInterval(timer);
-// 		},20)
-// 	}
-// }
+	// 	timer = setInterval(function() {
+	// 		alpha += 2;
+	// 		alpha > 100 && (alpha = 100);
+	// 		aImg[index].style.opacity = alpha/100;
+	// 		aImg[index].style.filter = 'alpha(opacity = "+alpha+")';
+	// 		alpha == 100 && clearInterval(timer);
+	// 	},20)
+	// }
 
 // 8.数组操作
+// window.onload = function() {
+//     var myArray = document.getElementById('array_box');
+//     var thisArray = myArray.getElementsByClassName('array_example')[0];
+//     var myInput = myArray.getElementsByTagName('input');
+//     var str = thisArray.innerHTML;
+//     var aTmp = str.split(',');
+//     var originArray = ['圣女果','芒果','樱桃','榴莲','苹果','樱桃','牛油果','荔枝'];
+//     myInput[0].onclick = function() {
+//         aTmp = [];
+//         for(var i in originArray) {aTmp.push(originArray[i]);}
+//         thisArray.innerHTML = originArray.join();
+//     }
+//     myInput[1].onclick = function () {
+//         aTmp.shift();
+//         thisArray.innerHTML = aTmp.join();
+//     }
+//     myInput[2].onclick = function () {
+//         aTmp.pop();
+//         thisArray.innerHTML = aTmp.join();
+//     }
+//     myInput[3].onclick = function () {
+//         aTmp.splice(0,3);
+//         thisArray.innerHTML = aTmp.join();
+//     }
+//     myInput[4].onclick = function () {
+//         aTmp.splice(1,2);
+//         thisArray.innerHTML = aTmp.join();
+//     }
+//     myInput[5].onclick = function () {
+//         aTmp.splice(2,0,'香蕉','橘子');
+//         thisArray.innerHTML = aTmp.join();
+//     }
+//     myInput[6].onclick = function () {
+//         aTmp.splice(1,2,'草莓');
+//         thisArray.innerHTML = aTmp.join();
+//     }
+// }
+
+// 9.事件绑定
+// var EventRoot = {
+//     addEvent: function(oElement,oEvent,handler) {
+//         oElement.addEventListener ? oElement.addEventListener(oEvent,handler,false) : oElement.attachEvent('on'+oEvent,handler);
+//     },
+//     removeEvent: function(oElement,oEvent,handler) {
+//         oElement.removeEventListener ? oElement.removeEventListener(oEvent,handler,false) : oElement.detachEvent('on'+oEvent,handler);
+//     },
+//     addLoadHandler: function(fnHandler) {
+//         this.addEvent(window,'load',fnHandler);
+//     }
+// }
+// EventRoot.addLoadHandler(function(){
+//     var oInput = document.getElementsByTagName('input');
+//     //为第一个按钮添加绑定事件
+//     EventRoot.addEvent(oInput[1],'click',function(){
+//         EventRoot.addEvent(oInput[0],'click',event_handler);
+//         oInput[0].value = '我可以点击了';
+//     });
+//     //解除第一个按钮的绑定事件
+//     EventRoot.addEvent(oInput[2],'click',function(){
+//         EventRoot.removeEvent(oInput[0],'click',event_handler);
+//         oInput[0].value = '毫无用处的按钮';
+//     });
+//     //事件处理函数
+//     function event_handler() {
+//         alert('事件绑定成功！');
+//     }
+// })
+
+// 10.星级评分系统
+// window.onload = function() {
+//     var oStar = document.getElementById('star');
+//     var oUl = oStar.getElementsByTagName('ul')[0];
+//     var oLi = oStar.getElementsByTagName('li');
+//     var oSpan = oStar.getElementsByTagName('span')[1];
+//     var oP = oStar.getElementsByTagName('p')[0];
+//     var i = iScore = iStar = 0;
+//     var aMsg = [
+//                 "很不满意|差得太离谱，与卖家描述的严重不符，非常不满",
+//                 "不满意|部分有破损，与卖家描述的不符，不满意",
+//                 "一般|质量一般，没有卖家描述的那么好",
+//                 "满意|质量不错，与卖家描述的基本一致，还是挺满意的",
+//                 "非常满意|质量非常好，与卖家描述的完全一致，非常满意"
+//                 ]
+//     for(var i = 0; i<oLi.length; i++) {
+//         oLi[i].index = i+1;
+//         //鼠标移至星星上方：点亮对应数量的星星、显示和定位提示框、更新提示框内容
+//         oLi[i].onmouseover = function() {
+//             //点亮星星
+//             light(this.index);
+//             //显示提示内容
+//             oP.style.display = 'block';
+//             //对提示内容进行定位
+//             oP.style.left = oUl.offsetLeft + this.index * this.offsetWidth - 104 + 'px';
+//             //匹配提示内容
+//             oP.innerHTML = '<em><b>' + this.index + ' </b>分 ' + aMsg[this.index - 1].match(/(.+)\|/)[1] + '</em>' + aMsg[this.index - 1].match(/\|(.+)/)[1];
+//         }
+//         //鼠标点击星星：右侧出现消息框、更新消息框内容、给iStar一个值防止鼠标移出恢复原状
+//         oLi[i].onclick = function () {
+//             oSpan.style.display = 'block';
+//             oSpan.innerHTML = '<strong>' + this.index + ' 分</strong> （' + aMsg[this.index - 1].match(/\|(.+)/)[1] + '）';
+//             iStar = this.index;
+//         }
+//         //鼠标移出星星上方：恢复到上一个点击状态、提示框消失
+//         oLi[i].onmouseout = function() {
+//             light();
+//             oP.style.display = 'none';
+//         }
+//     }
+//     //定义点亮星星的函数
+//     function light(iAvg) {
+//         iScore = iAvg || iStar;
+//         for(var i = 0; i < oLi.length; i++) {
+//             oLi[i].className = (iScore > i ? 'on' : '');
+//         }
+//     }
+// }
+
+// 11.显示点击位置的坐标和按下键盘的keyCode
+// window.onclick = function(event) {
+// 	var event = event || window.event;
+// 	alert('横坐标：' + event.clientX + '；' + '纵坐标：' + event.clientY);
+// }
+// window.onkeydown = function(event) {
+// 	var key_code = document.getElementsByTagName('h1')[0];
+// 	var event = event || window.event;
+// 	key_code.innerHTML = event.keyCode;
+// 	return false;
+// }
+
+// 12.阻止鼠标右击事件
+// document.oncontextmenu = function() {
+// 	return false;
+// }
+
+// 13.跟随鼠标移动
 
 
 
