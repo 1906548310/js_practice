@@ -311,7 +311,83 @@
 // }
 
 // 13.跟随鼠标移动
+// window.onload = function () {
+//     var aLi = document.getElementsByTagName("li");
+//     var oBig = document.getElementById("big");
+//     var oLoading = oBig.getElementsByTagName("div")[0];
+//     var i = 0;
+    
+//     for(var i = 0; i < aLi.length; i++) {
+//         aLi[i].index = i;
+//         //鼠标滑过：显示大图、定位大图、改变自身样式
+//         aLi[i].onmouseover = function () {
+//             var oImg = document.createElement('img');
+//             var img = new Image();
+//             //给大图片添加src
+//             img.src = oImg.src = aLi[this.index].getElementsByTagName('img')[0].src.replace(".jpg","_big.jpg");
+//             //添加子元素
+//             oBig.appendChild(oImg);
+//             //改变DIV本身样式
+//             this.className = 'active';
+//             //控制提示框和加载图片显隐
+//             oBig.style.display = oLoading.style.display = 'block';
+//             //确保大图片加载完成，撤去加载图片
+//             img.complete ? (oLoading.style.display = 'none') : (img.oload = function() {oLoading.style.display = 'none'});
+//         }
+//         //鼠标移动：定位大图
+//         aLi[i].onmousemove = function (event) {
+//         	event = event || window.event;
+//             iWidth = document.documentElement.offsetWidth - event.clientX;
+//             //计算出big的top和left
+//             oBig.style.top = (event.clientY + 20) + 'px';
+//             oBig.style.left = (oBig.offsetWidth + 20 < iWidth ? (event.clientX + 20) : (event.clientX - oBig.offsetWidth - 20)) + 'px'
+//         }
+//         //鼠标移出：关闭大图、删除对应子元素、去除自身样式
+//         aLi[i].onmouseout = function() {
+//         	oBig.style.display = 'none';
+//         	this.className = '';
+//         	//移除子元素
+//             oBig.removeChild(oBig.lastChild);
+//         }
+//     }
+// };
 
+// 14.自定义鼠标右键
+// window.onload = function () {
+// 	var oMenu = document.getElementById("menu");
+// 	var aLi = oMenu.getElementsByTagName("li");
+// 	//加载后隐藏自定义右键菜单
+// 	oMenu.style.display = "none";
+// 	//菜单鼠标移入/移出样式
+// 	for (i = 0; i < aLi.length; i++)
+// 	{
+// 		//鼠标移入样式
+// 		aLi[i].onmouseover = function ()
+// 		{
+// 			this.className = "active"	
+// 		};
+// 		//鼠标移出样式
+// 		aLi[i].onmouseout = function ()
+// 		{
+// 			this.className = ""	
+// 		}
+// 	}
+// 	//自定义菜单
+// 	document.oncontextmenu = function (event)
+// 	{
+// 		var event = event || window.event;
+// 		var style = oMenu.style;
+// 		style.display = "block";
+// 		style.top = event.clientY + "px";
+// 		style.left = event.clientX + "px";
+// 		return false;
+// 	};
+// 	//页面点击后自定义菜单消失
+// 	document.onclick = function ()
+// 	{
+// 		oMenu.style.display = "none"	
+// 	}
+// };
 
 
 

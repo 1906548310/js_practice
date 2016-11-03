@@ -151,7 +151,7 @@
 <!-- 显示点击位置的坐标和按下键盘的keyCode -->
 
 <!-- 跟随鼠标移动 -->
-<div id="box">
+<!-- <div id="box">
     <ul>
         <li><img src="http://www.fgm.cc/learn/lesson5/img/shirt_1.jpg" /></li>
         <li><img src="http://www.fgm.cc/learn/lesson5/img/shirt_2.jpg" /></li>
@@ -159,37 +159,28 @@
         <li><img src="http://www.fgm.cc/learn/lesson5/img/shirt_4.jpg" /></li>
     </ul>
 </div>
-<div id="big"><div></div></div>
+<div id="big"><div></div></div> -->
 <!-- 跟随鼠标移动 -->
+
+<!-- 自定义鼠标右键 -->
+<!-- <center>自定义右键菜单，请在页面点击右键查看效果。</center>
+<ul id="menu">
+    <li class=""><em class="cut"></em><a href="javascript:;">剪切</a></li>
+    <li class=""><em class="copy"></em><a href="javascript:;">复制</a></li>
+    <li class=""><em class="paste"></em><a href="javascript:;">粘贴</a></li>
+</ul> -->
+<!-- 自定义鼠标右键 -->
+
+
+
+
 
 
 <!-- <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script> -->
 <!-- <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 <!-- <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script> -->
 <script type="text/javascript">
-window.onload = function ()
-{
-    var aLi = document.getElementsByTagName("li");
-    var oBig = document.getElementById("big");
-    var oLoading = oBig.getElementsByTagName("div")[0];
-    var i = 0;
-    
-    for(var i = 0; i < aLi.length; i++) {
-        aLi[i].index = i;
-        //鼠标滑过：显示大图、定位大图、改变自身样式
-        aLi[i].onmouseover = function () {
-            /* body... */
-        }
-        //鼠标移动：定位大图
-        aLi[i].onmousemove = function () {
-            /* body... */
-        }
-        //鼠标移出：关闭大图、删除对应子元素、去除自身样式
-        aLi[i].onmouseout = function() {
-            
-        }
-    }
-};
+
 
 </script>
 

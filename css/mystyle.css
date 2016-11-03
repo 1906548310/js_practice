@@ -105,15 +105,30 @@ ul{list-style-type:none;}
 /*星级评分系统*/
 
 /*跟随鼠标移动*/
-html,body{overflow:hidden;}
+/*html,body{overflow:hidden;}
 body,div,ul,li{margin:0;padding:0;}
 #box ul{width:768px;height:172px;list-style-type:none;margin:10px auto;}
 #box li{float:left;width:170px;height:170px;cursor:pointer;display:inline;border:1px solid #ddd;margin:0 10px;}
 #box li.active{border:1px solid #a10000;}
 #box li img{width:170px;height:170px;vertical-align:top;}
 #big{position:absolute;width:400px;height:400px;border:2px solid #ddd;display:none;}
-#big div{position:absolute;top:0;left:0;width:400px;height:400px;opacity:0.5;filter:alpha(opacity=50);background:#fff url(http://www.fgm.cc/learn/lesson5/img/loading.gif) 50% 50% no-repeat;}
+#big div{position:absolute;top:0;left:0;width:400px;height:400px;opacity:0.5;filter:alpha(opacity=50);background:#fff url(http://www.fgm.cc/learn/lesson5/img/loading.gif) 50% 50% no-repeat;}*/
 /*跟随鼠标移动*/
+
+/*自定义鼠标右键*/
+/*body,ul,li{margin:0;padding:0;}
+body{font:12px/24px arial;}
+#menu{position:absolute;top:-9999px;left:-9999px;width:100px;border-radius:3px;list-style-type:none;border:1px solid #8f8f8f;padding:2px;background:#fff;}
+#menu li{position:relative;height:24px;padding-left:24px;background:#eaead7;vertical-align:top;}
+#menu li a{display:block;color:#333;background:#fff;padding-left:5px;text-decoration:none;}
+#menu li.active{background:#999;}
+#menu li.active a{color:#fff;background:#8f8f8f;}
+#menu li em{position:absolute;top:0;left:0;width:24px;height:24px;background:url(img/ico.png) no-repeat;}
+#menu li em.cur{background-position:0 0;}
+#menu li em.copy{background-position:0 -24px;}
+#menu li em.paste{background-position:0 -48px;}*/
+/*自定义鼠标右键*/
+
 
 
 
