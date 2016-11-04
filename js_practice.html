@@ -205,7 +205,7 @@ window.onload = function () {
             oBox.style.right = oBox.offsetLeft + 10 + 'px';
         } else if(oTop) {
             oBox.style.top = oBox.offsetTop - 10 + 'px';
-        } else {
+        } else if(oBottom) {
             oBox.style.bottom = oBox.offsetTop + 10 + 'px';
         }
         limit();
