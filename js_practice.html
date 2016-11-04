@@ -202,11 +202,11 @@ window.onload = function () {
         if(oLeft) {
             oBox.style.left = oBox.offsetLeft - 10 + 'px';
         } else if(oRight) {
-            oBox.style.right = oBox.offsetLeft + 10 + 'px';
+            oBox.style.left = oBox.offsetLeft + 10 + 'px';
         } else if(oTop) {
             oBox.style.top = oBox.offsetTop - 10 + 'px';
         } else if(oBottom) {
-            oBox.style.bottom = oBox.offsetTop + 10 + 'px';
+            oBox.style.top = oBox.offsetTop + 10 + 'px';
         }
         limit();
     },30)
@@ -242,13 +242,13 @@ window.onload = function () {
                 }
                 break;
             case 49:
-                iCtrl && (oBox.display.backgroundColor = 'green');
+                iCtrl && (oBox.style.backgroundColor = 'green');
                 break;
             case 50:
-                iCtrl && (oBox.display.backgroundColor = 'yellow');
+                iCtrl && (oBox.style.backgroundColor = 'yellow');
                 break;
             case 51:
-                iCtrl && (oBox.display.backgroundColor = 'blue');
+                iCtrl && (oBox.style.backgroundColor = 'blue');
                 break;
         }
     }
@@ -272,15 +272,15 @@ window.onload = function () {
     }
     //防止元素溢出函数
     function limit() {
-        var doc = [document.documentElement.offsetWidth,document.documentElement.offsetHeight];
+        var doc = [document.documentElement.clientWidth,document.documentElement.clientHeight];
         //防止左侧溢出
         oBox.offsetLeft <=0 && (oBox.style.left = 0);
         //防止上方溢出
         oBox.offsetTop <=0 && (oBox.style.top = 0);
         //防止右侧溢出
-        doc[0] - oBox.offsetLeft - oBox.offsetWidth <= 0 && (oBox.style.right = 0);
+        doc[0] - oBox.offsetLeft - oBox.offsetWidth <= 0 && (oBox.style.left = doc[0] - oBox.offsetWidth + 'px');
         //防止底部溢出
-        doc[1] - oBox.offsetTop - oBox.offsetHeight <= 0 && (oBox.style.bottom = 0);
+        doc[1] - oBox.offsetTop - oBox.offsetHeight <= 0 && (oBox.style.top = doc[1] - oBox.offsetHeight + 'px');
     }
 }
 
