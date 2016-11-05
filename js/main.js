@@ -390,7 +390,95 @@
 // };
 
 // 15.键盘控制DIV
-
+window.onload = function () {
+    var oBox = document.getElementById('box');
+    var oLeft = oTop = oRight = oBottom = false;
+    //设置计时器
+    setInterval(function() {
+        if(oLeft) {
+            oBox.style.left = oBox.offsetLeft - 10 + 'px';
+        } else if(oRight) {
+            oBox.style.left = oBox.offsetLeft + 10 + 'px';
+        } else if(oTop) {
+            oBox.style.top = oBox.offsetTop - 10 + 'px';
+        } else if(oBottom) {
+            oBox.style.top = oBox.offsetTop + 10 + 'px';
+        }
+        limit();
+    },30)
+    //键盘按下事件
+    document.onkeydown = function() {
+        var event = event || window.event;
+        var iCtrl = event.ctrlKey;
+        switch (event.keyCode) {
+            case 37:
+                oLeft = true;
+                break;
+            case 38:
+                if(!iCtrl) {
+                    oTop = true;
+                } else {
+                    oBox.style.width = oBox.offsetWidth * 1.5 + 'px';
+                    oBox.style.height = oBox.offsetHeight * 1.5 + 'px';
+                    oBox.style.left = oBox.offsetLeft - oBox.offsetWidth * 0.25 + 'px';
+                    oBox.style.top = oBox.offsetTop - oBox.offsetHeight * 0.25 + 'px';
+                }
+                break;
+            case 39:
+                oRight = true;
+                break;
+            case 40:
+                if(!iCtrl) {
+                    oBottom = true;
+                } else {
+                    oBox.style.width = oBox.offsetWidth / 1.5 + 'px';
+                    oBox.style.height = oBox.offsetHeight / 1.5 + 'px';
+                    oBox.style.left = oBox.offsetLeft + oBox.offsetWidth * 0.25 + 'px';
+                    oBox.style.top = oBox.offsetTop + oBox.offsetHeight * 0.25 + 'px';
+                }
+                break;
+            case 49:
+                iCtrl && (oBox.style.backgroundColor = 'green');
+                break;
+            case 50:
+                iCtrl && (oBox.style.backgroundColor = 'yellow');
+                break;
+            case 51:
+                iCtrl && (oBox.style.backgroundColor = 'blue');
+                break;
+        }
+    }
+    //键盘抬起事件
+    document.onkeyup = function() {
+        var event = event || window.event;
+        switch (event.keyCode) {
+            case 37:
+                oLeft = false;
+                break;
+            case 38:
+                oTop = false;
+                break;
+            case 39:
+                oRight = false;
+                break;
+            case 40:
+                oBottom = false;
+                break;
+        }
+    }
+    //防止元素溢出函数
+    function limit() {
+        var doc = [document.documentElement.clientWidth,document.documentElement.clientHeight];
+        //防止左侧溢出
+        oBox.offsetLeft <=0 && (oBox.style.left = 0);
+        //防止上方溢出
+        oBox.offsetTop <=0 && (oBox.style.top = 0);
+        //防止右侧溢出
+        doc[0] - oBox.offsetLeft - oBox.offsetWidth <= 0 && (oBox.style.left = doc[0] - oBox.offsetWidth + 'px');
+        //防止底部溢出
+        doc[1] - oBox.offsetTop - oBox.offsetHeight <= 0 && (oBox.style.top = doc[1] - oBox.offsetHeight + 'px');
+    }
+}
 
 
 
