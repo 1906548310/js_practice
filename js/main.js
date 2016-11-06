@@ -390,95 +390,205 @@
 // };
 
 // 15.键盘控制DIV
-window.onload = function () {
-    var oBox = document.getElementById('box');
-    var oLeft = oTop = oRight = oBottom = false;
-    //设置计时器
-    setInterval(function() {
-        if(oLeft) {
-            oBox.style.left = oBox.offsetLeft - 10 + 'px';
-        } else if(oRight) {
-            oBox.style.left = oBox.offsetLeft + 10 + 'px';
-        } else if(oTop) {
-            oBox.style.top = oBox.offsetTop - 10 + 'px';
-        } else if(oBottom) {
-            oBox.style.top = oBox.offsetTop + 10 + 'px';
-        }
-        limit();
-    },30)
-    //键盘按下事件
-    document.onkeydown = function() {
-        var event = event || window.event;
-        var iCtrl = event.ctrlKey;
-        switch (event.keyCode) {
-            case 37:
-                oLeft = true;
-                break;
-            case 38:
-                if(!iCtrl) {
-                    oTop = true;
-                } else {
-                    oBox.style.width = oBox.offsetWidth * 1.5 + 'px';
-                    oBox.style.height = oBox.offsetHeight * 1.5 + 'px';
-                    oBox.style.left = oBox.offsetLeft - oBox.offsetWidth * 0.25 + 'px';
-                    oBox.style.top = oBox.offsetTop - oBox.offsetHeight * 0.25 + 'px';
-                }
-                break;
-            case 39:
-                oRight = true;
-                break;
-            case 40:
-                if(!iCtrl) {
-                    oBottom = true;
-                } else {
-                    oBox.style.width = oBox.offsetWidth / 1.5 + 'px';
-                    oBox.style.height = oBox.offsetHeight / 1.5 + 'px';
-                    oBox.style.left = oBox.offsetLeft + oBox.offsetWidth * 0.25 + 'px';
-                    oBox.style.top = oBox.offsetTop + oBox.offsetHeight * 0.25 + 'px';
-                }
-                break;
-            case 49:
-                iCtrl && (oBox.style.backgroundColor = 'green');
-                break;
-            case 50:
-                iCtrl && (oBox.style.backgroundColor = 'yellow');
-                break;
-            case 51:
-                iCtrl && (oBox.style.backgroundColor = 'blue');
-                break;
-        }
-    }
-    //键盘抬起事件
-    document.onkeyup = function() {
-        var event = event || window.event;
-        switch (event.keyCode) {
-            case 37:
-                oLeft = false;
-                break;
-            case 38:
-                oTop = false;
-                break;
-            case 39:
-                oRight = false;
-                break;
-            case 40:
-                oBottom = false;
-                break;
-        }
-    }
-    //防止元素溢出函数
-    function limit() {
-        var doc = [document.documentElement.clientWidth,document.documentElement.clientHeight];
-        //防止左侧溢出
-        oBox.offsetLeft <=0 && (oBox.style.left = 0);
-        //防止上方溢出
-        oBox.offsetTop <=0 && (oBox.style.top = 0);
-        //防止右侧溢出
-        doc[0] - oBox.offsetLeft - oBox.offsetWidth <= 0 && (oBox.style.left = doc[0] - oBox.offsetWidth + 'px');
-        //防止底部溢出
-        doc[1] - oBox.offsetTop - oBox.offsetHeight <= 0 && (oBox.style.top = doc[1] - oBox.offsetHeight + 'px');
-    }
-}
+// window.onload = function () {
+//     var oBox = document.getElementById('box');
+//     var oLeft = oTop = oRight = oBottom = false;
+//     //设置计时器
+//     setInterval(function() {
+//         if(oLeft) {
+//             oBox.style.left = oBox.offsetLeft - 10 + 'px';
+//         } else if(oRight) {
+//             oBox.style.left = oBox.offsetLeft + 10 + 'px';
+//         } else if(oTop) {
+//             oBox.style.top = oBox.offsetTop - 10 + 'px';
+//         } else if(oBottom) {
+//             oBox.style.top = oBox.offsetTop + 10 + 'px';
+//         }
+//         limit();
+//     },30)
+//     //键盘按下事件
+//     document.onkeydown = function() {
+//         var event = event || window.event;
+//         var iCtrl = event.ctrlKey;
+//         switch (event.keyCode) {
+//             case 37:
+//                 oLeft = true;
+//                 break;
+//             case 38:
+//                 if(!iCtrl) {
+//                     oTop = true;
+//                 } else {
+//                     oBox.style.width = oBox.offsetWidth * 1.5 + 'px';
+//                     oBox.style.height = oBox.offsetHeight * 1.5 + 'px';
+//                     oBox.style.left = oBox.offsetLeft - oBox.offsetWidth * 0.25 + 'px';
+//                     oBox.style.top = oBox.offsetTop - oBox.offsetHeight * 0.25 + 'px';
+//                 }
+//                 break;
+//             case 39:
+//                 oRight = true;
+//                 break;
+//             case 40:
+//                 if(!iCtrl) {
+//                     oBottom = true;
+//                 } else {
+//                     oBox.style.width = oBox.offsetWidth / 1.5 + 'px';
+//                     oBox.style.height = oBox.offsetHeight / 1.5 + 'px';
+//                     oBox.style.left = oBox.offsetLeft + oBox.offsetWidth * 0.25 + 'px';
+//                     oBox.style.top = oBox.offsetTop + oBox.offsetHeight * 0.25 + 'px';
+//                 }
+//                 break;
+//             case 49:
+//                 iCtrl && (oBox.style.backgroundColor = 'green');
+//                 break;
+//             case 50:
+//                 iCtrl && (oBox.style.backgroundColor = 'yellow');
+//                 break;
+//             case 51:
+//                 iCtrl && (oBox.style.backgroundColor = 'blue');
+//                 break;
+//         }
+//     }
+//     //键盘抬起事件
+//     document.onkeyup = function() {
+//         var event = event || window.event;
+//         switch (event.keyCode) {
+//             case 37:
+//                 oLeft = false;
+//                 break;
+//             case 38:
+//                 oTop = false;
+//                 break;
+//             case 39:
+//                 oRight = false;
+//                 break;
+//             case 40:
+//                 oBottom = false;
+//                 break;
+//         }
+//     }
+//     //防止元素溢出函数
+//     function limit() {
+//         var doc = [document.documentElement.clientWidth,document.documentElement.clientHeight];
+//         //防止左侧溢出
+//         oBox.offsetLeft <=0 && (oBox.style.left = 0);
+//         //防止上方溢出
+//         oBox.offsetTop <=0 && (oBox.style.top = 0);
+//         //防止右侧溢出
+//         doc[0] - oBox.offsetLeft - oBox.offsetWidth <= 0 && (oBox.style.left = doc[0] - oBox.offsetWidth + 'px');
+//         //防止底部溢出
+//         doc[1] - oBox.offsetTop - oBox.offsetHeight <= 0 && (oBox.style.top = doc[1] - oBox.offsetHeight + 'px');
+//     }
+// }
+
+// 16.计时器控制Div闪烁
+// window.onload = function () {
+//     var oBox = document.getElementById('box');
+//     var timer = null;
+//     oBox.onclick = function () {
+//         var i  = 0;
+//         clearInterval(timer);
+//         timer = setInterval(function () {
+//             oBox.style.display = i++ % 2 ? 'none' : 'block';
+//             i > 6 && clearInterval(timer);
+//         }, 100)
+//     }
+// }
+
+// 17.完美拖拽
+// window.onload = function () {
+//     var oBox = document.getElementById('box');
+//     var oH2 = oBox.getElementsByTagName('h2')[0];
+//     var oA = oBox.getElementsByTagName('a')[0];
+//     var aSpan = oBox.getElementsByTagName('span');
+//     var disX = disY = 0;
+//     var bDrag = false;
+//     var aPos = [{x:oBox.offsetLeft, y:oBox.offsetTop}];
+
+//     //鼠标按下，激活拖拽
+//     oH2.onmousedown = function(event) {
+//         var event = event || window.event;
+//         bDrag = true;
+//         disX = event.clientX - oBox.offsetLeft;
+//         disY = event.clientY - oBox.offsetTop;
+
+//         aPos.push({x:oBox.offsetLeft, y:oBox.offsetTop});
+
+//         this.setCapture && this.setCapture();  //这句话什么意思？设置鼠标捕获？
+
+//         return false;  //用来阻止执行默认的行为
+//     };
+
+//     //拖拽开始
+//     document.onmousemove = function(event) {
+//         if(!bDrag) return;  //这里可以用短路运算吗？不可以。这里用return false 也可以？
+//         var event = event || window.event;
+//         var iL = event.clientX - disX;
+//         var iT = event.clientY - disY;
+//         var maxL = document.documentElement.clientWidth - oBox.offsetWidth;
+//         var maxT = document.documentElement.clientHeight - oBox.offsetHeight;
+
+//         // 将元素限定在网页中，这里用if写也不错，三目运算不一定有多高明，就是看起来高端~
+//         iL = iL < 0 ? 0 : iL;
+//         iL  = iL > maxL ? maxL : iL;
+
+//         iT = iT < 0 ? 0 : iT;
+//         iT  = iT > maxT ? maxT : iT; 
+
+//         // if(iL < 0) {
+//         // 	iL = 0;
+//         // } else if(iL > maxL) {
+//         // 	iL = maxL;
+//         // }
+
+//         //通过监听鼠标位置，设置元素位置
+//         oBox.style.marginTop = oBox.style.marginLeft = 0;  //因为居中用到margin的缘故，所以要把margin恢复
+//         oBox.style.left = iL + 'px';
+//         oBox.style.top = iT + 'px';
+
+//         //将每次记录的位置保存成对象放置在全局数组aPos中
+//         aPos.push({x:iL, y:iT});
+
+//         //每次移动读取位置
+//         status();
+
+//         return false;   
+//     };
+
+//     //鼠标释放，结束拖拽
+//     document.onmouseup = window.onblur = oH2.onlosecapture = function() {
+//         bDrag = false;
+//         oH2.releaseCapture && oH2.releaseCapture();  //没见过这方法，还有上面的setCapture.
+//         status();
+//     };
+
+//     //回放拖动轨迹
+//     oA.onclick = function() {
+//         if(aPos.length == 1) return;
+//         var timer = setInterval(function() {
+//             var tmpPos = aPos.pop();  //pop()删除数组最后一个元素并将该元素返回给tmpPos
+//             tmpPos ? (oBox.style.left = oPos.x + 'px', oBox.style.top = oPos.y + 'px', status()) : clearInterval(timer);
+//         }, 30);
+
+//         this.focus = false;  //去除链接虚线
+
+//         return false;
+//     }
+//     //阻止冒泡
+//     oA.onmousedown = function (event) {
+//         (event || window.event).cancelBubble = true;
+//     };
+
+//     //监听状态函数
+//     function status() {
+//         aSpan[0].innerHTML = bDrag;
+//         aSpan[1].innerHTML = oBox.offsetTop;
+//         aSpan[2].innerHTML = oBox.offsetLeft;
+//     }
+
+//     //初始调用
+//     status();
+// }
+
 
 
 
