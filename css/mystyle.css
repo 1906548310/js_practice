@@ -142,17 +142,68 @@ span{color:#999;}
 /*计时器控制Div闪烁*/
 
 /* 完美拖拽 */
-html,body{overflow:hidden;}
+/* html,body{overflow:hidden;}
 body,div,h2,p{margin:0;padding:0;}
 body{color:#fff;background:#000;font:12px/2 Arial;}
 p{padding:0 10px;margin-top:10px;}
 span{color:#ff0;padding-left:5px;}
 #box{position:absolute;width:300px;height:150px;background:#333;border:2px solid #ccc;top:50%;left:50%;margin:-75px 0 0 -150px;}
 #box h2{height:25px;cursor:move;background:#222;border-bottom:2px solid #ccc;text-align:right;padding:0 10px 10px 10px;}
-#box h2 a{color:#fff;font:12px/25px Arial;text-decoration:none;outline:none;}
+#box h2 a{color:#fff;font:12px/25px Arial;text-decoration:none;outline:none;} */
 /* 完美拖拽 */
 
+/* 仿照微博发布效果 */
+/* body,div,h2,h3,ul,li,p{margin:0;padding:0;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+ul{list-style-type:none;}
+body{color:#333;background:#3c3a3b;font:12px/1.5 \5b8b\4f53;}
+#msgBox{width:500px;background:#fff;border-radius:5px;margin:10px auto;padding-top:10px;}
+#msgBox form h2{font-weight:400;font:400 18px/1.5 \5fae\8f6f\96c5\9ed1;}
+#msgBox form{background:url(http://www.fgm.cc/learn/lesson6/img/boxBG.jpg) repeat-x 0 bottom;padding:0 20px 15px;}
+#userName,#conBox{color:#777;border:1px solid #d0d0d0;border-radius:6px;background:#fff url(http://www.fgm.cc/learn/lesson6/img/inputBG.png) repeat-x;padding:3px 5px;font:14px/1.5 arial;}
+#userName.active,#conBox.active{border:1px solid #7abb2c;}
+#userName{height:20px;}
+#conBox{width:448px;resize:none;height:65px;overflow:auto;}
+#msgBox form div{position:relative;color:#999;margin-top:10px;}
+#msgBox img{border-radius:3px;}
+#face{position:absolute;top:0;left:172px;}
+#face img{width:30px;height:30px;cursor:pointer;margin-right:6px;opacity:0.5;filter:alpha(opacity=50);}
+#face img.hover,#face img.current{width:28px;height:28px;border:1px solid #f60;opacity:1;filter:alpha(opacity=100);}
+#sendBtn{border:0;width:112px;height:30px;cursor:pointer;margin-left:10px;background:url(http://www.fgm.cc/learn/lesson6/img/btn.png) no-repeat;}
+#sendBtn.hover{background-position:0 -30px;}
+#msgBox form .maxNum{font:26px/30px Georgia, Tahoma, Arial;padding:0 5px;}
+#msgBox .list{padding:10px;}
+#msgBox .list h3{position:relative;height:33px;font-size:14px;font-weight:400;background:#e3eaec;border:1px solid #dee4e7;}
+#msgBox .list h3 span{position:absolute;left:6px;top:6px;background:#fff;line-height:28px;display:inline-block;padding:0 15px;}
+#msgBox .list ul{overflow:hidden;zoom:1;}
+#msgBox .list ul li{float:left;clear:both;width:100%;border-bottom:1px dashed #d8d8d8;padding:10px 0;background:#fff;overflow:hidden;}
+#msgBox .list ul li.hover{background:#f5f5f5;}
+#msgBox .list .userPic{float:left;width:50px;height:50px;display:inline;margin-left:10px;border:1px solid #ccc;border-radius:3px;}
+#msgBox .list .content{float:left;width:400px;font-size:14px;margin-left:10px;font-family:arial;word-wrap:break-word;}
+#msgBox .list .userName{display:inline;padding-right:5px;}
+#msgBox .list .userName a{color:#2b4a78;}
+#msgBox .list .msgInfo{display:inline;word-wrap:break-word;}
+#msgBox .list .times{color:#889db6;font:12px/18px arial;margin-top:5px;overflow:hidden;zoom:1;}
+#msgBox .list .times span{float:left;}
+#msgBox .list .times a{float:right;color:#889db6;display:none;}
+.tr{overflow:hidden;zoom:1;}
+.tr p{float:right;line-height:30px;}
+.tr *{float:left;} */
+/* 仿照微博发布效果 */
 
+/* 自定义右键菜单 */
+html,body{height:100%;overflow:hidden;}
+body,div,ul,li{margin:0;padding:0;}
+body{font:12px/1.5 \5fae\8f6f\96c5\9ed1;}
+ul{list-style-type:none;}
+#rightMenu{position:absolute;top:-9999px;left:-9999px;}
+#rightMenu ul{float:left;border:1px solid #979797;background:#f1f1f1 url(http://www.fgm.cc/learn/lesson6/img/line.png) 24px 0 repeat-y;padding:2px;box-shadow:2px 2px 2px rgba(0,0,0,.6);}
+#rightMenu ul li{float:left;clear:both;height:24px;cursor:pointer;line-height:24px;white-space:nowrap;padding:0 30px;}
+#rightMenu ul li.sub{background-repeat:no-repeat;background-position:right 9px;background-image:url(http://www.fgm.cc/learn/lesson6/img/arrow.png);}
+#rightMenu ul li.active{background-color:#f1f3f6;border-radius:3px;border:1px solid #aecff7;height:22px;line-height:22px;background-position:right -8px;padding:0 29px;}
+#rightMenu ul ul{display:none;position:absolute;}
+/* 自定义右键菜单 */
 
 
 
