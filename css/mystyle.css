@@ -193,7 +193,7 @@ body{color:#333;background:#3c3a3b;font:12px/1.5 \5b8b\4f53;}
 /* 仿照微博发布效果 */
 
 /* 自定义右键菜单 */
-html,body{height:100%;overflow:hidden;}
+/* html,body{height:100%;overflow:hidden;}
 body,div,ul,li{margin:0;padding:0;}
 body{font:12px/1.5 \5fae\8f6f\96c5\9ed1;}
 ul{list-style-type:none;}
@@ -202,7 +202,7 @@ ul{list-style-type:none;}
 #rightMenu ul li{float:left;clear:both;height:24px;cursor:pointer;line-height:24px;white-space:nowrap;padding:0 30px;}
 #rightMenu ul li.sub{background-repeat:no-repeat;background-position:right 9px;background-image:url(http://www.fgm.cc/learn/lesson6/img/arrow.png);}
 #rightMenu ul li.active{background-color:#f1f3f6;border-radius:3px;border:1px solid #aecff7;height:22px;line-height:22px;background-position:right -8px;padding:0 29px;}
-#rightMenu ul ul{display:none;position:absolute;}
+#rightMenu ul ul{display:none;position:absolute;} */
 /* 自定义右键菜单 */
 
 
