@@ -333,7 +333,7 @@ Ctrl + ↓ : 缩小
 <!-- 自定义右键菜单 -->
 
 <!-- 表格转化成Excel文件 -->
-<table id="targetTable">
+<!-- <table id="targetTable">
     <tbody>
         <tr align="center">
             <th>标识</th>
@@ -352,8 +352,15 @@ Ctrl + ↓ : 缩小
         </tr>
     </tbody>
 </table>
-<a id="exportExcel" href="javascript:;">导出Excel</a>
+<a id="exportExcel" href="javascript:;">导出Excel</a> -->
 <!-- 表格转化成Excel文件 -->
+
+<!-- H5视频+本地存储 -->
+<video id="video" controls autoplay>
+  <source src="media/example.mp4" type="video/mp4">
+您的浏览器不支持 video 元素。
+</video>
+<!-- H5视频+本地存储 -->
 
 
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
@@ -361,8 +368,20 @@ Ctrl + ↓ : 缩小
 <!-- <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 <!-- <script src="http://cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script> -->
 <script type="text/javascript">
-
-
+var video = document.getElementById("video");
+var video_name;
+window.onload = function() { 
+    var startTime = localStorage.getItem(video_name);
+    video.currentTime = startTime;
+    video.onpause = function() {
+        var current = video.currentTime;  //播放进度
+        localStorage.setItem(video_name, current);  //将观看进度保存到本地存储
+    }
+}
+window.onbeforeunload = onbeforeunload_handler;  
+function onbeforeunload_handler(){
+    video.pause();
+}  
 </script>
 
 </body>
