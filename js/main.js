@@ -1045,62 +1045,62 @@
 //     video.pause();
 // }
 
-// 22.练习Ajax
+// // 22.练习原生Ajax
 
-// 1.创建Ajax对象
-//定义创建XMLHttpRequest对象的函数
-function getXhr() {
-	var xhr = null;
-	if(window.XMLHttpRequest) {
-		xhr = new XMLHttpRequest();
-	} else {
-		xhr = new ActiveXObject('Microsoft.XMLHttp');
-	}
-	return xhr;
-}
-//调用函数
-var xhr_example = getXhr();
+	// // 1.创建Ajax对象
+	// //定义创建XMLHttpRequest对象的函数
+	// function getXhr() {
+	// 	var xhr = null;
+	// 	if(window.XMLHttpRequest) {
+	// 		xhr = new XMLHttpRequest();
+	// 	} else {
+	// 		xhr = new ActiveXObject('Microsoft.XMLHttp');
+	// 	}
+	// 	return xhr;
+	// }
+	// //调用函数
+	// var xhr_example = getXhr();
 
-// 2.与服务器端建立连接 - open(method,url,async)方法
-	//method - 设置当前的请求类型(GET或POST)
-	//url - 设置当前的请求地址
-	//async - 设置是否异步（布尔类型值，默认为true - 异步）
-xhr_example.open('get','01.php?user = guqiang');
+	// // 2.与服务器端建立连接 - open(method,url,async)方法
+	// 	//method - 设置当前的请求类型(GET或POST)
+	// 	//url - 设置当前的请求地址
+	// 	//async - 设置是否异步（布尔类型值，默认为true - 异步）
+	// xhr_example.open('get','01.php?user = guqiang');
 
-//****假如用post请求类型，必须要在send()方法调用之前，使用setRequestHeader(key,value)方法
-//以下为POST请求的写法
-//xhr_example.open('get','01.php?user = guqiang');
-//xhr_example.setRequestHeader("Content-Type","application/x-www-form-urlencodes");
-// xhr_example.send('user = guqiang');
+	// //****假如用post请求类型，必须要在send()方法调用之前，使用setRequestHeader(key,value)方法
+	// //以下为POST请求的写法
+	// //xhr_example.open('get','01.php?user = guqiang');
+	// //xhr_example.setRequestHeader("Content-Type","application/x-www-form-urlencodes");
+	// // xhr_example.send('user = guqiang');
 
-// 3.客户端向服务器端发送请求 - send(请求参数)方法
-	//请求参数的格式 - 'key = value'
-	//如果请求类型是GET方式，send()方法是不能向服务器端发送请求数据的
-	//但send()方法是不能被省略的，GET请求类型 - send(NULL);
-	//解决办法：将请求数据添加到open方法的URL后面，变成url?key=value
+	// // 3.客户端向服务器端发送请求 - send(请求参数)方法
+	// 	//请求参数的格式 - 'key = value'
+	// 	//如果请求类型是GET方式，send()方法是不能向服务器端发送请求数据的
+	// 	//但send()方法是不能被省略的，GET请求类型 - send(NULL);
+	// 	//解决办法：将请求数据添加到open方法的URL后面，变成url?key=value
 
-xhr_example.send(null);
+	// xhr_example.send(null);
 
-// 4.客户端接收服务器端的响应
-	// 使用XHR的onreadystatechange事件 - 监听服务器的通信状态 - readyState属性
-	//readyState属性4个值：0,1,2,3,4
-	// 0 - 尚未初始化（服务器端）
-	// 1 - 正在发送请求
-	// 2 - 请求完成
-	// 3 - 请求成功，正在接收数据（响应）
-	// 4 - 响应完毕
-	//status属性 - 状态码（）
-	//	200 OK
-	//	404 Not Found
-xhr_example.onreadystatechange = function () {
-	if(xhr_example.readyState == 4) {
-		if(xhr_example.status == 200) {
-			// 接收服务器端的数据（HTML格式） - responseText属性
-			var data = xhr_example.responseText;
-			console.log(data);
-		}
-	}
-}
+	// // 4.客户端接收服务器端的响应
+	// 	// 使用XHR的onreadystatechange事件 - 监听服务器的通信状态 - readyState属性
+	// 	//readyState属性4个值：0,1,2,3,4
+	// 	// 0 - 尚未初始化（服务器端）
+	// 	// 1 - 正在发送请求
+	// 	// 2 - 请求完成
+	// 	// 3 - 请求成功，正在接收数据（响应）
+	// 	// 4 - 响应完毕
+	// 	//status属性 - 状态码（）
+	// 	//	200 OK
+	// 	//	404 Not Found
+	// xhr_example.onreadystatechange = function () {
+	// 	if(xhr_example.readyState == 4) {
+	// 		if(xhr_example.status == 200) {
+	// 			// 接收服务器端的数据（HTML格式） - responseText属性
+	// 			var data = xhr_example.responseText;
+	// 			console.log(data);
+	// 		}
+	// 	}
+	// }
 
 
 
