@@ -1102,7 +1102,22 @@
 	// 	}
 	// }
 
-
+// 23.获取DOM Event
+function whichElement(e) {
+	var targ;
+	var e = e || window.event;
+	if (e.target) {
+		targ = e.target;
+	} else if(e.srcElement) {
+		targ = e.srcElement;
+	}
+	if (targ.nodeType == 3) {  // defeat Safari bug
+	   targ = targ.parentNode;
+	}
+	var tname;
+	tname = targ.tagName;
+	alert("You clicked on a " + tname + " element.");
+}
 
 
 
